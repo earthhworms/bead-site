@@ -1,26 +1,40 @@
 :root {
-  --background: #ffffff;
-  --foreground: #fff;
+  --bg-primary: #100C1C;
+  --bg-secondary: #2a2148;
+
+  --neon-blue:  #4db7ff;
+  --neon-green: #59ff6a;
+  --neon-pink:  #ff4f9a;
+  --neon-yellow:#ffd84d;
+  --neon-purple:#9a6bff;
+
+  --text-primary: #f4f3ff;
+  --text-muted:  #b8b4d9;
+  --border-subtle:#3a3160;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #fff;
-    --foreground: #ededed;
-  }
+a {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-family: var(--open-sans);
 }
 
-h1 {
+li {
+  list-style-type: none;
+  font-family: var(--open-sans);
+  font-size: .9em;
+}
+
+h1, h2{
   font-family: var(--special-gothic);
-  text-shadow: 3px 3px 0 black;
-  font-size: 2.4em;
-  background-color: transparent;
-  -webkit-text-stroke: 1px black;
+  text-shadow: 3px 3px 0 var(--text-primary);
+  -webkit-text-stroke: 1px var(--text-primary);
+  color: var(--bg-primary);
 }
 
 p {
   font-family: var(--open-sans);
-  color: black;
+  color: var(--text-primary);
 }
 
 * {
@@ -35,8 +49,7 @@ html, body {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  background-color: var(--bg-primary);
   font-family: Open;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

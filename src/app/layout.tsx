@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
+import Header from "@/components/Header/Header";
 
 export const metadata: Metadata = {
   title: "Bunny on a Bender | Handmade & Upcycled Rave Gear",
@@ -11,7 +12,6 @@ const openSans = localFont({
   src: "../app/fonts/OpenSans.ttf",
   variable: "--open-sans",
   style: "normal",
-  weight: "600",
   display: "swap",
 });
 
@@ -30,6 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${openSans.variable} ${specialGothic.variable}`}>
+        <Header />
         {children}
       </body>
     </html>
