@@ -25,20 +25,20 @@ export default function Header() {
     <div>
         <div className={styles.headerParent}>
             <div className={styles.headerChild}>
-                <img
+                <a href="/"><img
                     src="/icons/logo.svg"
                     alt="Bunny Logo"
                     className={styles.logo}
-                />
+                /></a>
             </div>
             <nav
             className={`${styles.headerChild} ${styles.nav} ${
             menuOpen ? styles.navOpen : ""
             }`}>
                 <ul className={styles.navContainer}>
-                    <li className={styles.navItem}><a href="">Shop</a></li>
-                    <li className={styles.navItem}><a href="">About</a></li>
-                    <li className={styles.navItem}><a href="">Contact</a></li>
+                    <li className={styles.navItem}><a href="/shop">Shop</a></li>
+                    <li className={styles.navItem}><a href="/about">About</a></li>
+                    <li className={styles.navItem}><a href="/about">Contact</a></li>
                 </ul>
             </nav>
             <button

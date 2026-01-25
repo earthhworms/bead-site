@@ -1,4 +1,4 @@
 export default function ShopPage() {
-    return <div>About</div>;
+    return <div>shop</div>;
   }
   
