@@ -1,11 +1,15 @@
 
-
-
 .headerParent {
     display: flex;
     width: 100%;
     justify-content: space-between;
     padding: 16px 32px;
+    align-items: center;
+    background-color: var(--bg-secondary);
+}
+
+.headerChild {
+    margin: 0;
 }
 
 .navItem {
@@ -15,11 +19,8 @@
     margin: 0;
 }
 
-.nav {
-    margin: 0;
-    padding: 0;
-}
-
 .navContainer {
-    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 24px;
 }
