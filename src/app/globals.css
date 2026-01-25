@@ -15,7 +15,6 @@
 
 a {
   text-decoration: none;
-  color: var(--text-primary);
   font-family: var(--open-sans);
 }
 
@@ -25,16 +24,20 @@ li {
   font-size: .9em;
 }
 
-h1, h2{
+h1{
+  font-family: var(--bungee);
+  text-shadow: 3px 3px 0 black;
+  -webkit-text-stroke: 1px;
+}
+
+h2 {
   font-family: var(--special-gothic);
-  text-shadow: 3px 3px 0 var(--text-primary);
-  -webkit-text-stroke: 1px var(--text-primary);
-  color: var(--bg-primary);
+  text-shadow: 3px 3px 0 black;
+  -webkit-text-stroke: 1px;
 }
 
 p {
   font-family: var(--open-sans);
-  color: var(--text-primary);
 }
 
 * {

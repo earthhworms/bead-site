@@ -5,8 +5,9 @@ export default function Home() {
     <div className={styles.page}>
       <main className={styles.main}>
         <div className={styles.title}>
-          <h1>HANDMADE RAVE GEAR</h1>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores a nesciunt fugit doloribus provident beatae iusto assumenda facere, id perferendis minus, laborum consectetur iste error maxime suscipit quis voluptatibus nam!</p>
+          <h1>HAND <br></br>MADE <br></br>RAVE<br></br>GEAR</h1>
+          <h2>FOR RAVERS, <br></br>BY A RAVER</h2>
+          <a className={styles.landingButton}>SHOP ITEMS</a>
         </div>
       </main>
     </div>

@@ -1,3 +1,30 @@
+.title h1 {
+  color: var(--neon-pink);
+  text-shadow: black;
+  font-size: 86px;
+  line-height: 76px;
+  margin: 0;
+}
+
+.title h2 {
+  margin: 0;
+}
 .title {
-  margin: 32px;
+  width: 95%;
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: end;
+  margin-bottom: 64px;
+  text-align: right;
+}
+
+.landingButton {
+  background-color: var(--neon-blue);
+  padding: 16px 32px;
+  color: var(--bg-primary);
+  font-weight: 800;
+  border-radius: 32px;
+  border: solid 2px black;
 }

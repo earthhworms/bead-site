@@ -22,6 +22,20 @@ const specialGothic = localFont ({
   display: "swap"
 })
 
+const lilitaOne = localFont ({
+  src: "../app/fonts/LilitaOne.ttf",
+  variable: "--lilita-one",
+  style: "normal",
+  display: "swap"
+})
+
+const bungee = localFont ({
+  src: "../app/fonts/bungee.ttf",
+  variable: "--bungee",
+  style: "normal",
+  display: "swap"
+})
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,7 +43,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${openSans.variable} ${specialGothic.variable}`}>
+      <body className={`${openSans.variable} ${specialGothic.variable} ${lilitaOne.variable} ${bungee.variable}`}>
         <Header />
         {children}
       </body>
