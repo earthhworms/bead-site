@@ -23,7 +23,7 @@ const specialGothic = localFont ({
 })
 
 const bungee = localFont ({
-  src: "../app/fonts/bungee.ttf",
+  src: "../app/fonts/Bungee.ttf",
   variable: "--bungee",
   style: "normal",
   display: "swap"
