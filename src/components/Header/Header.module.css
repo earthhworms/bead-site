@@ -3,7 +3,7 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
-    padding: 16px 32px;
+    padding: 16px 32px 0px 32px;
     align-items: center;
     background-color: var(--bg-secondary);
 }
@@ -29,4 +29,13 @@
     gap: 24px;
     width: 90%;
     justify-content: center;
+}
+
+.waves {
+    width: 100%;
+    display: block;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    right: 0;
 }

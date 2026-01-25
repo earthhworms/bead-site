@@ -2,9 +2,14 @@ import styles from "./Header.module.css";
 
 export default function Header() {
   return (
+    <div>
     <div className={styles.headerParent}>
         <div className={styles.headerChild}>
-            <h2>Logo</h2>
+            <img
+                src="/icons/logo.svg"
+                alt="Bunny Logo"
+                className={styles.logo}
+            />
         </div>
         <nav className={`${styles.headerChild} ${styles.nav}`}>
             <ul className={styles.navContainer}>
@@ -23,6 +28,12 @@ export default function Header() {
         <div className={styles.hamburger}>
 
         </div>
+    </div>
+    <img
+        src="/icons/header-wave.svg"
+        className={styles.waves}
+        
+    />
     </div>
   );
 }
