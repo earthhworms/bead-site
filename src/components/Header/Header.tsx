@@ -13,8 +13,15 @@ export default function Header() {
                 <li className={styles.navItem}>About</li>
             </ul>
         </nav>
-        <div className={styles.headerChild}>
-            <a href="">Cart</a>
+        <div className={`${styles.headerChild} ${styles.bagIconContainer}`}>
+            <img
+                src="/icons/bag.svg"
+                alt="Cart"
+                className={styles.bagIcon}
+            />
+        </div>
+        <div className={styles.hamburger}>
+
         </div>
     </div>
   );
