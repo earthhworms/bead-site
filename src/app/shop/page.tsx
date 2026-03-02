@@ -18,6 +18,7 @@ type ProductsQuery = {
     };
   };
 
+  
 export default async function ShopPage() {
 
     const data = await shopifyFetch<ProductsQuery>(`
