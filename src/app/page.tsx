@@ -9,6 +9,10 @@ export default function Home() {
           <h2>FOR RAVERS, <br></br>BY A RAVER</h2>
           <a className={styles.landingButton}>SHOP ITEMS</a>
         </div>
+
+        <div>
+          
+        </div>
       </main>
     </div>
   );
