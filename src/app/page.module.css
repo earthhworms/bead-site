@@ -2,7 +2,7 @@
   font-size: 86px;
   line-height: 76px;
   margin: 0;
-  color: var(--neon-pink);
+
 }
 
 .title h2 {
@@ -31,35 +31,31 @@
 }
 
 .rainbowText {
-  background-image: repeating-linear-gradient(
-    -45deg,
-    var(--neon-green) 0px,
-    var(--neon-green) 24px,
-    var(--neon-blue) 24px,
-    var(--neon-blue) 48px,
-    var(--neon-pink) 48px,
-    var(--neon-pink) 70px
+  display: inline-block;
+  line-height: 1;
+
+  background: linear-gradient(
+    120deg,
+    var(--neon-blue) 0%,
+    var(--neon-green) 22%,
+    var(--neon-yellow) 42%,
+    var(--neon-pink) 68%,
+    var(--neon-purple) 100%
   );
 
-  background-size: 200% 100%;
-  background-repeat: repeat;
-
+  background-size: 250% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 
-  animation: rainbowMove 3s linear infinite;
+  animation: neonFlow 10s ease-in-out infinite alternate;
 }
 
-.rainbowText {
-  will-change: background-position;
-}
-
-@keyframes rainbowMove {
+@keyframes neonFlow {
   from {
-    background-position: 0 0;
+    background-position: 0% 0;
   }
   to {
-    background-position: -51px -51px;
+    background-position: 100% 0;
   }
 }

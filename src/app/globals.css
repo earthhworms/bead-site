@@ -4,7 +4,7 @@
 
   --neon-blue:  #55E0FF;
   --neon-green: #59ff6a;
-  --neon-pink:  #ff4f9a;
+  --neon-pink:  #ff00c8;
   --neon-yellow:#ffd84d;
   --neon-purple:#9a6bff;
 
@@ -26,8 +26,7 @@ li {
 
 h1{
   font-family: var(--bungee);
-  text-shadow: 3px 3px 0 black;
-  -webkit-text-stroke: 1px;
+
 }
 
 /*
