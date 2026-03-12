@@ -1,14 +1,14 @@
 .title h1 {
-  color: var(--neon-pink);
-  text-shadow: black;
   font-size: 86px;
   line-height: 76px;
   margin: 0;
+  color: var(--neon-pink);
 }
 
 .title h2 {
   margin: 0;
 }
+
 .title {
   width: 95%;
   margin-top: 48px;
@@ -28,4 +28,38 @@
   font-weight: 800;
   border-radius: 32px;
   border: solid 2px black;
+}
+
+.rainbowText {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--neon-green) 0px,
+    var(--neon-green) 24px,
+    var(--neon-blue) 24px,
+    var(--neon-blue) 48px,
+    var(--neon-pink) 48px,
+    var(--neon-pink) 70px
+  );
+
+  background-size: 200% 100%;
+  background-repeat: repeat;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  animation: rainbowMove 3s linear infinite;
+}
+
+.rainbowText {
+  will-change: background-position;
+}
+
+@keyframes rainbowMove {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -51px -51px;
+  }
 }

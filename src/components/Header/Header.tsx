@@ -36,7 +36,12 @@ export default function Header() {
             menuOpen ? styles.navOpen : ""
             }`}>
                 <ul className={styles.navContainer}>
-                    <li className={styles.navItem}><a href="/shop">Shop</a></li>
+                    <li className={styles.navItem}><a className={styles.dropdownArrow} href="/shop">Shop</a>
+                        <ul className={styles.navDropdown}>
+                            <li><a href="/shop/accessories">Accessories</a></li>
+                            <li><a href="/shop/clothing">Clothing</a></li>
+                        </ul>
+                    </li>
                     <li className={styles.navItem}><a href="/about">About</a></li>
                     <li className={styles.navItem}><a href="/about">Contact</a></li>
                 </ul>

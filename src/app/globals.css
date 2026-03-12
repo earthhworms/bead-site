@@ -2,7 +2,7 @@
   --bg-primary: #100C1C;
   --bg-secondary: #2a2148;
 
-  --neon-blue:  #4db7ff;
+  --neon-blue:  #55E0FF;
   --neon-green: #59ff6a;
   --neon-pink:  #ff4f9a;
   --neon-yellow:#ffd84d;
@@ -30,10 +30,15 @@ h1{
   -webkit-text-stroke: 1px;
 }
 
+/*
 h2 {
   font-family: var(--special-gothic);
   text-shadow: 3px 3px 0 black;
   -webkit-text-stroke: 1px;
+} */
+
+h2 {
+  font-family: var(--special-gothic);
 }
 
 p {
