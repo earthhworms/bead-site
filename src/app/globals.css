@@ -39,9 +39,6 @@ h2 {
 
   /* outline (trace) */
   -webkit-text-stroke: .5px black;
-
-  /* drop shadow */
-  text-shadow: 3px 3px 0 black;
 }
 
 h2 {
