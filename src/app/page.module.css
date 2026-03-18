@@ -31,13 +31,18 @@
 }
 
 .page {
+  background-color: var(--bg-primary);
+}
+
+/*
+.page {
   overflow: hidden;
   position: relative;
   display: flex;
   justify-content: center;
 }
 
-/* background image + blur */
+
 .page::before {
   content: "";
   position: absolute;
@@ -48,7 +53,7 @@
   z-index: -2;
 }
 
-/* purple overlay */
+
 .page::after {
   content: "";
   position: absolute;
@@ -58,12 +63,12 @@
 
   filter: blur(2px);
 
-  /* 👇 only show on right side */
+
   -webkit-mask-image: linear-gradient(to right, transparent 30%, black 100%);
   mask-image: linear-gradient(to right, transparent 30%, black 100%);
 
   z-index: -1;
-}
+}*/
 
 .main {
   display: grid;
