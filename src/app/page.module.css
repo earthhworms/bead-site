@@ -22,7 +22,7 @@
 }
 
 .landingButton {
-  background-color: var(--neon-blue);
+  background-color: var(--neon-purple);
   padding: 16px 32px;
   color: var(--bg-primary);
   font-weight: 800;
@@ -30,16 +30,75 @@
   border: solid 2px black;
 }
 
+.page {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+/* background image + blur */
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: url("/images/landing-back.png") left / cover no-repeat;
+
+  z-index: -2;
+}
+
+/* purple overlay */
+.page::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: url("/images/landing-back.png") left / cover no-repeat;
+
+  filter: blur(2px);
+
+  /* 👇 only show on right side */
+  -webkit-mask-image: linear-gradient(to right, transparent 30%, black 100%);
+  mask-image: linear-gradient(to right, transparent 30%, black 100%);
+
+  z-index: -1;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 90%;
+  align-items: center;
+  max-width: 1024px;
+  height: 80vh;
+}
+
+.landingImage {
+  border-radius: 32px;
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+}
+
+
+@media (max-width:830px){
+  .landingImage {
+    display: none;
+  }
+}
+
 .rainbowText {
   display: inline-block;
   line-height: 1;
+  position: relative;
 
   background: linear-gradient(
     120deg,
     var(--neon-blue) 0%,
-    var(--neon-green) 22%,
+    var(--neon-pink) 22%,
     var(--neon-yellow) 42%,
-    var(--neon-pink) 68%,
+    var(--neon-green) 68%,
     var(--neon-purple) 100%
   );
 
@@ -47,8 +106,9 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  text-shadow: 3px 3px 0 black;
 
-  animation: neonFlow 10s ease-in-out infinite alternate;
+  animation: neonFlow 15s ease-in-out infinite alternate;
 }
 
 @keyframes neonFlow {
@@ -57,5 +117,69 @@
   }
   to {
     background-position: 100% 0;
+  }
+}
+
+
+
+.wave {
+  width: 100%;
+  overflow: hidden;
+  background: transparent;
+  line-height: 0;
+  position: absolute;
+}
+
+.waveTrack {
+  display: flex;
+  width: 200%;
+  animation: waveMove 20s linear infinite;
+}
+
+.wave svg {
+  width: 50%;
+  height: 15px;
+  fill: var(--bg-secondary);
+  transform: rotate(180deg);
+}
+
+@keyframes waveMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+
+
+.wave2 {
+  width: 100%;
+  overflow: hidden;
+  background: transparent;
+  line-height: 0;
+  position: absolute;
+  bottom: 0;
+}
+
+.waveTrack2 {
+  display: flex;
+  width: 200%;
+  animation: waveMove 20s linear infinite;
+}
+
+.wave2 svg {
+  width: 50%;
+  height: 15px;
+  fill: var(--bg-secondary);
+}
+
+@keyframes waveMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }

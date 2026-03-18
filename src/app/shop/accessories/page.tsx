@@ -19,12 +19,12 @@ type CollectionProductsQuery = {
       }[];
     };
   } | null;
-};
+}; 
 
 export default async function AccessoriesPage() {
   const data = await shopifyFetch<CollectionProductsQuery>(`
     {
-      collection(handle: "accesories") {
+      collection(handle: "accessories") {
         products(first: 24) {
           edges {
             node {

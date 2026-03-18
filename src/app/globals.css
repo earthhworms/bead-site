@@ -24,17 +24,25 @@ li {
   font-size: .9em;
 }
 
+
+
 h1{
   font-family: var(--bungee);
-
+  -webkit-text-stroke: 2px black;
+  font-weight: 300 !important;
 }
 
-/*
+
 h2 {
   font-family: var(--special-gothic);
+  color: white;
+
+  /* outline (trace) */
+  -webkit-text-stroke: .5px black;
+
+  /* drop shadow */
   text-shadow: 3px 3px 0 black;
-  -webkit-text-stroke: 1px;
-} */
+}
 
 h2 {
   font-family: var(--special-gothic);
@@ -66,5 +74,36 @@ body {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+
+
+
+.wave {
+  width: 100%;
+  overflow: hidden;
+  background: var(--bg-secondary);
+  line-height: 0;
+}
+
+.waveTrack {
+  display: flex;
+  width: 200%;
+  animation: waveMove 20s linear infinite;
+}
+
+.wave svg {
+  width: 50%;
+  height: 15px;
+  fill: var(--bg-primary);
+}
+
+@keyframes waveMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }

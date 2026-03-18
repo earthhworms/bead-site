@@ -3,7 +3,7 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
-    padding: 16px 32px 0px 32px;
+    padding: 16px 32px 12px 32px;
     align-items: center;
     background-color: var(--bg-secondary);
 }
@@ -21,10 +21,6 @@
     text-align: center;
     margin: 0;
     border-bottom: solid 1px transparent;
-}
-
-.navItem:hover {
-    border-bottom: solid 1px var(--text-primary);
 }
 
 .nav { 
@@ -98,7 +94,7 @@
 }
 
 .navItem {
-  font-weight: 600;
+  font-weight: 800;
 }
   
 .navDropdown {
@@ -134,8 +130,8 @@
     
   .navOpen {
     display: block;
-    position: fixed;          /* <-- key */
-    inset: 0;                 /* top:0 right:0 bottom:0 left:0 */
+    position: fixed;
+    inset: 0;
     width: 60%;
     height: 100vh;
     background: var(--bg-secondary);
@@ -147,7 +143,7 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
-    font-size: 24px;
+    font-size: 30px;
     height: 100%;
     width: 100%;
     padding-bottom: 64px;
@@ -159,7 +155,70 @@
   
     .hamburger {
         display: flex;
-        z-index: 1100;            /* stays above overlay */
+        z-index: 1100;
       }
   }
+
+  .navDropdown li a {
+    font-weight: 400;
+  }
   
+
+@media (min-width: 769px) {
+  .navDropdown {
+    position: absolute;
+    background-color: var(--bg-secondary);
+    padding: 16px 20px;
+    border-radius: 16px;
+    box-shadow: 0px 0px 15px -3px black;
+    transform: translateY(8px);
+    z-index: 999;
+  }
+
+  .navItem::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 16px;
+}
+
+.navItem {
+  position: relative;
+}
+
+}
+
+
+
+
+
+
+.wave {
+  width: 100%;
+  overflow: hidden;
+  background: var(--bg-secondary);
+  line-height: 0;
+}
+
+.waveTrack {
+  display: flex;
+  width: 200%;
+  animation: waveMove 20s linear infinite;
+}
+
+.wave svg {
+  width: 50%;
+  height: 15px;
+  fill: var(--bg-primary);
+}
+
+@keyframes waveMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

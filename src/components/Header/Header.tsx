@@ -63,11 +63,6 @@ export default function Header() {
                 />
             </div>
         </div>
-        <img
-            src="/icons/header-wave.svg"
-            className={styles.waves}
-            
-        />
     </div>
   );
 }
