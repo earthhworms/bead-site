@@ -36,8 +36,7 @@ h1{
 h2 {
   font-family: var(--special-gothic);
   color: white;
-
-  /* outline (trace) */
+  text-shadow: 3px 3px 0 black;
   -webkit-text-stroke: .5px black;
 }
 

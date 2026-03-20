@@ -41,8 +41,15 @@ export default function Home() {
         </div>
     </div>
 
-      <section>
+      <section className="">
+          <div>
+            <div>
 
+            </div>
+            <div>
+
+            </div>
+          </div>
       </section>
     </div>
   );

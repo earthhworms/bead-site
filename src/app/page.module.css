@@ -36,6 +36,7 @@
   position: relative;
   display: flex;
   justify-content: center;
+  isolation: isolate;
 }
 
 
@@ -44,7 +45,7 @@
   position: absolute;
   inset: 0;
 
-  background: url("/images/landing.png") left / cover no-repeat;
+  background: url("/images/landing-image.png") left / cover no-repeat;
 
   z-index: -2;
 }
@@ -55,13 +56,13 @@
   position: absolute;
   inset: 0;
 
-  background: url("/images/landing.png") left / cover no-repeat;
+  background: url("/images/landing-image.png") left / cover no-repeat;
 
   filter: blur(2px);
 
 
-  -webkit-mask-image: linear-gradient(to right, transparent 30%, black 100%);
-  mask-image: linear-gradient(to right, transparent 30%, black 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 50%, black 100%);
+  mask-image: linear-gradient(to right, transparent 50%, black 100%);
 
   z-index: -1;
 }
