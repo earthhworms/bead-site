@@ -38,10 +38,14 @@ export async function shopifyFetch<T>(
   if (!res.ok) {
     throw new Error(`Shopify HTTP ${res.status}: ${JSON.stringify(json)}`);
   }
+
   if (json.errors?.length) {
     throw new Error(`Shopify GraphQL errors: ${JSON.stringify(json.errors)}`);
   }
-  if (!json.data) throw new Error("No data returned from Shopify");
+
+  if (!json.data) {
+    throw new Error("No data returned from Shopify");
+  }
 
   return json.data;
 }
@@ -55,9 +59,19 @@ type ShopifyProductResponse = {
     images: {
       nodes: { url: string; altText: string | null }[];
     };
+    options: {
+      name: string;
+      values: string[];
+    }[];
     variants: {
       nodes: {
         id: string;
+        title: string;
+        availableForSale: boolean;
+        selectedOptions: {
+          name: string;
+          value: string;
+        }[];
         price: {
           amount: string;
           currencyCode: string;
@@ -82,9 +96,19 @@ export async function getProduct(slug: string) {
               altText
             }
           }
-          variants(first: 10) {
+          options {
+            name
+            values
+          }
+          variants(first: 100) {
             nodes {
               id
+              title
+              availableForSale
+              selectedOptions {
+                name
+                value
+              }
               price {
                 amount
                 currencyCode
@@ -105,9 +129,247 @@ export async function getProduct(slug: string) {
     handle: data.product.handle,
     description: data.product.description,
     images: data.product.images.nodes,
+    options: data.product.options,
     variants: data.product.variants.nodes,
     price: data.product.variants.nodes[0]?.price.amount ?? "0.00",
-    currencyCode:
-      data.product.variants.nodes[0]?.price.currencyCode ?? "USD",
+    currencyCode: data.product.variants.nodes[0]?.price.currencyCode ?? "USD",
   };
+}
+
+export type CartLine = {
+  id: string;
+  quantity: number;
+  merchandise: {
+    id: string;
+    title: string;
+    product: {
+      title: string;
+      handle: string;
+    };
+    image: {
+      url: string;
+      altText: string | null;
+    } | null;
+    price: {
+      amount: string;
+      currencyCode: string;
+    };
+  };
+};
+
+export type ShopifyCart = {
+  id: string;
+  checkoutUrl: string;
+  totalQuantity: number;
+  lines: {
+    nodes: CartLine[];
+  };
+};
+
+type CartCreateResponse = {
+  cartCreate: {
+    cart: ShopifyCart | null;
+    userErrors: {
+      field: string[] | null;
+      message: string;
+    }[];
+  };
+};
+
+type CartLinesAddResponse = {
+  cartLinesAdd: {
+    cart: ShopifyCart | null;
+    userErrors: {
+      field: string[] | null;
+      message: string;
+    }[];
+  };
+};
+
+type CartLinesUpdateResponse = {
+  cartLinesUpdate: {
+    cart: ShopifyCart | null;
+    userErrors: {
+      field: string[] | null;
+      message: string;
+    }[];
+  };
+};
+
+type CartLinesRemoveResponse = {
+  cartLinesRemove: {
+    cart: ShopifyCart | null;
+    userErrors: {
+      field: string[] | null;
+      message: string;
+    }[];
+  };
+};
+
+type GetCartResponse = {
+  cart: ShopifyCart | null;
+};
+
+const CART_FIELDS = `
+  id
+  checkoutUrl
+  totalQuantity
+  lines(first: 20) {
+    nodes {
+      id
+      quantity
+      merchandise {
+        ... on ProductVariant {
+          id
+          title
+          product {
+            title
+            handle
+          }
+          image {
+            url
+            altText
+          }
+          price {
+            amount
+            currencyCode
+          }
+        }
+      }
+    }
+  }
+`;
+
+export async function createCart(merchandiseId: string, quantity = 1) {
+  const data = await shopifyFetch<CartCreateResponse>(
+    `
+      mutation CartCreate($lines: [CartLineInput!]) {
+        cartCreate(input: { lines: $lines }) {
+          cart {
+            ${CART_FIELDS}
+          }
+          userErrors {
+            field
+            message
+          }
+        }
+      }
+    `,
+    {
+      lines: [{ merchandiseId, quantity }],
+    }
+  );
+
+  if (data.cartCreate.userErrors.length) {
+    throw new Error(data.cartCreate.userErrors[0].message);
+  }
+
+  return data.cartCreate.cart;
+}
+
+export async function addToCart(
+  cartId: string,
+  merchandiseId: string,
+  quantity = 1
+) {
+  const data = await shopifyFetch<CartLinesAddResponse>(
+    `
+      mutation CartLinesAdd($cartId: ID!, $lines: [CartLineInput!]!) {
+        cartLinesAdd(cartId: $cartId, lines: $lines) {
+          cart {
+            ${CART_FIELDS}
+          }
+          userErrors {
+            field
+            message
+          }
+        }
+      }
+    `,
+    {
+      cartId,
+      lines: [{ merchandiseId, quantity }],
+    }
+  );
+
+  if (data.cartLinesAdd.userErrors.length) {
+    throw new Error(data.cartLinesAdd.userErrors[0].message);
+  }
+
+  return data.cartLinesAdd.cart;
+}
+
+export async function updateCartLineQuantity(
+  cartId: string,
+  lineId: string,
+  quantity: number
+) {
+  const data = await shopifyFetch<CartLinesUpdateResponse>(
+    `
+      mutation CartLinesUpdate($cartId: ID!, $lines: [CartLineUpdateInput!]!) {
+        cartLinesUpdate(cartId: $cartId, lines: $lines) {
+          cart {
+            ${CART_FIELDS}
+          }
+          userErrors {
+            field
+            message
+          }
+        }
+      }
+    `,
+    {
+      cartId,
+      lines: [{ id: lineId, quantity }],
+    }
+  );
+
+  if (data.cartLinesUpdate.userErrors.length) {
+    throw new Error(data.cartLinesUpdate.userErrors[0].message);
+  }
+
+  return data.cartLinesUpdate.cart;
+}
+
+export async function removeCartLine(cartId: string, lineId: string) {
+  const data = await shopifyFetch<CartLinesRemoveResponse>(
+    `
+      mutation CartLinesRemove($cartId: ID!, $lineIds: [ID!]!) {
+        cartLinesRemove(cartId: $cartId, lineIds: $lineIds) {
+          cart {
+            ${CART_FIELDS}
+          }
+          userErrors {
+            field
+            message
+          }
+        }
+      }
+    `,
+    {
+      cartId,
+      lineIds: [lineId],
+    }
+  );
+
+  if (data.cartLinesRemove.userErrors.length) {
+    throw new Error(data.cartLinesRemove.userErrors[0].message);
+  }
+
+  return data.cartLinesRemove.cart;
+}
+
+export async function getCart(cartId: string) {
+  const data = await shopifyFetch<GetCartResponse>(
+    `
+      query GetCart($cartId: ID!) {
+        cart(id: $cartId) {
+          ${CART_FIELDS}
+        }
+      }
+    `,
+    { cartId }
+  );
+
+  return data.cart;
 }

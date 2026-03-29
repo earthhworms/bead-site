@@ -25,7 +25,7 @@ export default async function AccessoriesPage() {
   const data = await shopifyFetch<CollectionProductsQuery>(`
     {
       collection(handle: "accessories") {
-        products(first: 24) {
+        products(first: 100) {
           edges {
             node {
               id

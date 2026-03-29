@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
 import Header from "@/components/Header/Header";
+import { CartProvider } from "@/context/CartContext";
 
 export const metadata: Metadata = {
   title: "Bunny on a Bender | Handmade & Upcycled Rave Gear",
@@ -15,30 +16,34 @@ const openSans = localFont({
   display: "swap",
 });
 
-const specialGothic = localFont ({
+const specialGothic = localFont({
   src: "../app/fonts/SpecialGothic.ttf",
   variable: "--special-gothic",
   style: "normal",
-  display: "swap"
-})
+  display: "swap",
+});
 
-const bungee = localFont ({
+const bungee = localFont({
   src: "../app/fonts/Bungee.ttf",
   variable: "--bungee",
   style: "normal",
-  display: "swap"
-})
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body className={`${openSans.variable} ${specialGothic.variable} ${bungee.variable}`}>
-        <Header />
-        {children}
+      <body
+        className={`${openSans.variable} ${specialGothic.variable} ${bungee.variable}`}
+      >
+        <CartProvider>
+          <Header />
+          {children}
+        </CartProvider>
       </body>
     </html>
   );

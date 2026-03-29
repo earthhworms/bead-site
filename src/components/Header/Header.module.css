@@ -96,6 +96,10 @@
 .navItem {
   font-weight: 800;
 }
+
+.bagIconContainer {
+  cursor: pointer;
+}
   
 .navDropdown {
   display: flex;
