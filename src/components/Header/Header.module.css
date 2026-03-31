@@ -194,10 +194,43 @@
 
 }
 
+.bagIconContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  background: transparent;
+  border: none;
+  padding: 0;
+}
 
+.cartCount {
+  position: absolute;
+  top: -6px;
+  right: -6px;
 
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--neon-pink);
+  color: white;
+  border: 2px solid var(--bg-primary);
+  border-radius: 999px;
+
+  font-size: 0.75rem;
+  font-weight: 800;
+  line-height: 1;
+  font-family: var(--open-sans);
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+}
 
 .wave {
   width: 100%;
