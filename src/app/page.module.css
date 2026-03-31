@@ -184,3 +184,40 @@
     transform: translateX(-50%);
   }
 }
+
+
+
+.banner {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--neon-yellow);
+  border: solid 2px black;
+  border-radius: 12px;
+  width: 90%;
+  box-shadow: -5px -5px var(--neon-blue), -5px 5px var(--neon-green), 5px -5px var(--neon-pink), 5px 5px var(--neon-purple);
+  padding: 24px 0px 24px 0px;
+}
+
+
+
+.bannerSection {
+  display: flex;
+  padding-top: 32px;
+
+  background-color: var(--bg-secondary);
+  justify-content: center;
+}
+
+
+.recentsSection {
+  background-color: var(--bg-secondary);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.recentsTitle {
+  text-align: center
+}
