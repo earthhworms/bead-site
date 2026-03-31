@@ -28,11 +28,12 @@ export default async function ProductPage({
         <p className={styles.price}>{product.price}</p>
         <p className={styles.description}>{product.description}</p>
         <ProductVariantSelector 
+            className={styles.variantSelector}
             options={product.options}
             variants={product.variants}
         />
-        <div className="paymentContainer">
-            <p className="securedPayment">Secured Payment</p>
+        <div className={styles.paymentContainer}>
+            <p className={styles.securedPayment}>Secured Payment</p>
         </div>
       </div>
     </div>

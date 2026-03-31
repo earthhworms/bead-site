@@ -119,9 +119,6 @@ export default function ProductVariantSelector({
 
       {selectedVariant ? (
         <>
-          <p>
-            {selectedVariant.price.currencyCode} {selectedVariant.price.amount}
-          </p>
 
           <AddToCartButton
             variantId={selectedVariant.id}
