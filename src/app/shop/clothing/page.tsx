@@ -3,39 +3,43 @@ import Image from "next/image";
 import { shopifyFetch } from "@/lib/shopify";
 import styles from "./page.module.css";
 
-type ProductsQuery = {
-  products: {
-    edges: {
-      node: {
-        id: string;
-        title: string;
-        handle: string;
-        featuredImage: { url: string; altText: string | null } | null;
-        priceRange: {
-          minVariantPrice: { amount: string; currencyCode: string };
+type CollectionProductsQuery = {
+  collection: {
+    products: {
+      edges: {
+        node: {
+          id: string;
+          title: string;
+          handle: string;
+          featuredImage: { url: string; altText: string | null } | null;
+          priceRange: {
+            minVariantPrice: { amount: string; currencyCode: string };
+          };
         };
-      };
-    }[];
-  };
+      }[];
+    };
+  } | null;
 };
 
-export default async function ShopPage() {
-  const data = await shopifyFetch<ProductsQuery>(`
+export default async function ClothingPage() {
+  const data = await shopifyFetch<CollectionProductsQuery>(`
     {
-      products(first: 24) {
-        edges {
-          node {
-            id
-            title
-            handle
-            featuredImage {
-              url
-              altText
-            }
-            priceRange {
-              minVariantPrice {
-                amount
-                currencyCode
+      collection(handle: "clothing") {
+        products(first: 100) {
+          edges {
+            node {
+              id
+              title
+              handle
+              featuredImage {
+                url
+                altText
+              }
+              priceRange {
+                minVariantPrice {
+                  amount
+                  currencyCode
+                }
               }
             }
           }
@@ -44,7 +48,7 @@ export default async function ShopPage() {
     }
   `);
 
-  const products = data.products.edges.map((e) => e.node);
+  const products = data.collection?.products.edges.map((e) => e.node) ?? [];
 
   return (
     <main className={styles.main}>
