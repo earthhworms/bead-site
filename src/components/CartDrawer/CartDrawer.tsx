@@ -197,7 +197,7 @@ export default function CartDrawer() {
                       onClick={() => handleRemove(line.id)}
                       disabled={loadingLineId === line.id}
                     >
-                      Remove
+                      REMOVE
                     </button>
                   </div>
                 </div>

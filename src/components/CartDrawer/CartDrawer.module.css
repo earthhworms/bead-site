@@ -118,3 +118,26 @@
   line-height: 1;
   cursor: pointer;
 }
+
+.qtyValue {
+    font-family: var(--open-sans);
+    font-weight: 800;
+    padding: 0px 12px 0px 12px;
+
+}
+
+.qtyButton {
+    background-color: transparent;
+    border: none;
+    padding: 0px 12px 0px 12px;
+    font-weight: 800;
+}
+
+.removeButton {
+    background-color: var(--neon-purple);
+    border: solid 2px black;
+    border-radius: 999;
+    padding: 4px 8px;
+    font-weight: 800;
+    margin-left: 6px;
+}
