@@ -1,8 +1,7 @@
 import { notFound } from "next/navigation";
 import { getProduct } from "@/lib/shopify";
 import styles from "./page.module.css";
-import AddToCartButton from "@/components/AddToCartButton";
-import ProductVariantSelector from "@/components/ProductVariantSelector";
+import ProductVariantSelector from "@/components/ProductVariantSelector/ProductVariantSelector";
 
 export default async function ProductPage({
   params,
@@ -28,10 +27,13 @@ export default async function ProductPage({
       <div className={styles.productDetails}>
         <p className={styles.price}>{product.price}</p>
         <p className={styles.description}>{product.description}</p>
-        <ProductVariantSelector
+        <ProductVariantSelector 
             options={product.options}
             variants={product.variants}
         />
+        <div className="paymentContainer">
+            <p className="securedPayment">Secured Payment</p>
+        </div>
       </div>
     </div>
   );

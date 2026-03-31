@@ -3,43 +3,39 @@ import Image from "next/image";
 import { shopifyFetch } from "@/lib/shopify";
 import styles from "./page.module.css";
 
-type CollectionProductsQuery = {
-  collection: {
-    products: {
-      edges: {
-        node: {
-          id: string;
-          title: string;
-          handle: string;
-          featuredImage: { url: string; altText: string | null } | null;
-          priceRange: {
-            minVariantPrice: { amount: string; currencyCode: string };
-          };
+type ProductsQuery = {
+  products: {
+    edges: {
+      node: {
+        id: string;
+        title: string;
+        handle: string;
+        featuredImage: { url: string; altText: string | null } | null;
+        priceRange: {
+          minVariantPrice: { amount: string; currencyCode: string };
         };
-      }[];
-    };
-  } | null;
+      };
+    }[];
+  };
 };
 
-export default async function ClothingPage() {
-  const data = await shopifyFetch<CollectionProductsQuery>(`
+export default async function ShopPage() {
+  const data = await shopifyFetch<ProductsQuery>(`
     {
-      collection(handle: "clothing") {
-        products(first: 24) {
-          edges {
-            node {
-              id
-              title
-              handle
-              featuredImage {
-                url
-                altText
-              }
-              priceRange {
-                minVariantPrice {
-                  amount
-                  currencyCode
-                }
+      products(first: 24) {
+        edges {
+          node {
+            id
+            title
+            handle
+            featuredImage {
+              url
+              altText
+            }
+            priceRange {
+              minVariantPrice {
+                amount
+                currencyCode
               }
             }
           }
@@ -48,7 +44,7 @@ export default async function ClothingPage() {
     }
   `);
 
-  const products = data.collection?.products.edges.map((e) => e.node) ?? [];
+  const products = data.products.edges.map((e) => e.node);
 
   return (
     <main className={styles.main}>
@@ -66,6 +62,7 @@ export default async function ClothingPage() {
                     width={600}
                     height={600}
                     className={styles.image}
+                    priority={false}
                   />
                 ) : (
                   <div className={styles.imagePlaceholder} />
@@ -75,8 +72,8 @@ export default async function ClothingPage() {
               <div className={styles.productRow}>
                 <div className={styles.productTitle}>{p.title}</div>
                 <div className={styles.price}>
-                  {Number(p.priceRange.minVariantPrice.amount).toFixed(2)}{" "}
-                  {p.priceRange.minVariantPrice.currencyCode}
+                  {"$"}
+                  {Number(p.priceRange.minVariantPrice.amount).toFixed(2)}
                 </div>
               </div>
             </Link>

@@ -3,14 +3,20 @@
 import { useState } from "react";
 import { useCart } from "@/context/CartContext";
 import type { ShopifyCart } from "@/lib/shopify";
+import styles from "./AddToCartButton.module.css";
 
 type Props = {
   variantId: string;
+  price: string;
 };
 
-export default function AddToCartButton({ variantId }: Props) {
+export default function AddToCartButton({ variantId, price }: Props) {
   const [loading, setLoading] = useState(false);
   const { setCart, openCart } = useCart();
+
+  const formattedPrice = Number.isFinite(Number(price))
+    ? Number(price).toFixed(2)
+    : price;
 
   async function handleAddToCart() {
     try {
@@ -68,8 +74,22 @@ export default function AddToCartButton({ variantId }: Props) {
   }
 
   return (
-    <button onClick={handleAddToCart} disabled={loading} type="button">
-      {loading ? "Adding..." : "Add to Cart"}
+    <button
+      onClick={handleAddToCart}
+      disabled={loading}
+      type="button"
+      className={styles.cartButton}
+    >
+      <img
+        src="/icons/bag-black.svg"
+        alt=""
+        aria-hidden="true"
+        className={styles.icon}
+      />
+
+      <span>
+        {loading ? "Adding..." : `ADD TO CART - ${formattedPrice}`}
+      </span>
     </button>
   );
 }

@@ -75,8 +75,7 @@ export default async function AccessoriesPage() {
               <div className={styles.productRow}>
                 <div className={styles.productTitle}>{p.title}</div>
                 <div className={styles.price}>
-                  {Number(p.priceRange.minVariantPrice.amount).toFixed(2)}{" "}
-                  {p.priceRange.minVariantPrice.currencyCode}
+                  {"$"}{Number(p.priceRange.minVariantPrice.amount).toFixed(2)}
                 </div>
               </div>
             </Link>
