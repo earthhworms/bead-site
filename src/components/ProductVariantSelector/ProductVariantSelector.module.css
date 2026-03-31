@@ -1,0 +1,40 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.optionGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.optionLabel {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.select {
+  border: 2px solid black;
+  border-radius: 999px;
+  padding: 14px 24px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: var(--open-sans);
+  background-color: white;
+  color: black;
+}
+
+.select:focus {
+  border-color: var(--bg-primary);
+}
+
+.unavailable {
+  margin: 0;
+  color: var(--neon-pink);
+  font-weight: 700;
+}

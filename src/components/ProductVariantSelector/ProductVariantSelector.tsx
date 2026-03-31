@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import AddToCartButton from "@/components/AddToCartButton/AddToCartButton";
-import styles from "./ProductVariantSelector.module.css"
+import styles from "./ProductVariantSelector.module.css";
 
 type ProductOption = {
   name: string;
@@ -94,39 +94,33 @@ export default function ProductVariantSelector({
   }
 
   return (
-    <div>
+    <div className={`${styles.wrapper} ${className ?? ""}`}>
       {realOptions.map((option) => (
-        <div key={option.name}>
-          <p>{option.name}</p>
+        <div key={option.name} className={styles.optionGroup}>
 
-          <div>
-            {option.values.map((value) => {
-              const active = selections[option.name] === value;
 
-              return (
-                <button
-                  key={value}
-                  type="button"
-                  onClick={() => handleOptionChange(option.name, value)}
-                >
-                  {value}
-                </button>
-              );
-            })}
-          </div>
+          <select
+            id={option.name}
+            className={styles.select}
+            value={selections[option.name]}
+            onChange={(e) => handleOptionChange(option.name, e.target.value)}
+          >
+            {option.values.map((value) => (
+              <option key={value} value={value}>
+                {value}
+              </option>
+            ))}
+          </select>
         </div>
       ))}
 
       {selectedVariant ? (
-        <>
-
-          <AddToCartButton
-            variantId={selectedVariant.id}
-            price={selectedVariant.price.amount}
-          />
-        </>
+        <AddToCartButton
+          variantId={selectedVariant.id}
+          price={selectedVariant.price.amount}
+        />
       ) : (
-        <p>
+        <p className={styles.unavailable}>
           This option combination is unavailable.
         </p>
       )}
