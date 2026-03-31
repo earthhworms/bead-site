@@ -161,6 +161,12 @@ export type ShopifyCart = {
   id: string;
   checkoutUrl: string;
   totalQuantity: number;
+  cost: {
+    totalAmount: {
+      amount: string;
+      currencyCode: string;
+    };
+  };
   lines: {
     nodes: CartLine[];
   };
@@ -214,6 +220,12 @@ const CART_FIELDS = `
   id
   checkoutUrl
   totalQuantity
+  cost {
+    totalAmount {
+      amount
+      currencyCode
+    }
+  }
   lines(first: 20) {
     nodes {
       id

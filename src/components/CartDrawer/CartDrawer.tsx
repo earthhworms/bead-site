@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import styles from "./CartDrawer.module.css";
-import CheckoutButton from "../CheckoutButton";
+import CheckoutButton from "../CheckoutButton/CheckoutButton";
 import { useCart } from "@/context/CartContext";
 
 export default function CartDrawer() {
@@ -171,39 +171,41 @@ export default function CartDrawer() {
                   </p>
 
                   <div className={styles.cartControls}>
-                    <button
-                      type="button"
-                      className={styles.qtyButton}
-                      onClick={() => handleDecrease(line.id, line.quantity)}
-                      disabled={loadingLineId === line.id}
-                    >
-                      −
-                    </button>
+                    <div className={styles.qtyControl}>
+                        <button
+                        type="button"
+                        className={styles.qtyButton}
+                        onClick={() => handleDecrease(line.id, line.quantity)}
+                        disabled={loadingLineId === line.id}
+                        >
+                        −
+                        </button>
 
-                    <span className={styles.qtyValue}>{line.quantity}</span>
+                        <span className={styles.qtyValue}>{line.quantity}</span>
+
+                        <button
+                        type="button"
+                        className={styles.qtyButton}
+                        onClick={() => handleIncrease(line.id, line.quantity)}
+                        disabled={loadingLineId === line.id}
+                        >
+                        +
+                        </button>
+                    </div>
 
                     <button
-                      type="button"
-                      className={styles.qtyButton}
-                      onClick={() => handleIncrease(line.id, line.quantity)}
-                      disabled={loadingLineId === line.id}
+                        type="button"
+                        className={styles.removeButton}
+                        onClick={() => handleRemove(line.id)}
+                        disabled={loadingLineId === line.id}
                     >
-                      +
+                        REMOVE
                     </button>
-
-                    <button
-                      type="button"
-                      className={styles.removeButton}
-                      onClick={() => handleRemove(line.id)}
-                      disabled={loadingLineId === line.id}
-                    >
-                      REMOVE
-                    </button>
-                  </div>
+                    </div>
                 </div>
 
                 <p className={styles.cartItemPrice}>
-                  {line.merchandise.price.currencyCode}{" "}
+                  {"$"}
                   {line.merchandise.price.amount}
                 </p>
               </div>
