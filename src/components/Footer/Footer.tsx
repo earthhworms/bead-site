@@ -31,11 +31,12 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div className={styles.footerSection}>
-          <h2>Social</h2>
-          <ul>
-            <li><a href="https://instagram.com/bunnyonabender">Instagram</a></li>
-          </ul>
+        <div className={styles.socialMedia}>
+          <img
+              src="/icons/insta.svg"
+              alt="Insta Logo"
+              className={styles.socialIcon}
+            />
         </div>
 
       </div>

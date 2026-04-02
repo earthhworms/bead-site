@@ -249,6 +249,19 @@ height: 10px;
   display: block;
   width: 100%;
   height: 10px;
+  fill: var(--neon-yellow);
+}
+
+.waveDividerYellow {
+  width: 100%;
+  line-height: 0;
+  background: var(--neon-yellow);
+}
+
+.waveDividerYellow svg {
+  display: block;
+  width: 100%;
+  height: 10px;
   fill: var(--bg-secondary);
 }
 
@@ -287,12 +300,40 @@ height: 10px;
   }
 }
 
-.ctaButton {
+.ctaButton1 {
   border-radius: 999;
   padding: 10px 20px 10px 20px;
   color: var(--neon-pink);
   font-weight: 800;
   background-color: white;
+}
+
+.ctaSection {
+  background-color: var(--neon-yellow);
+  padding-top: 16px;
+  padding-bottom: 32px;
+}
+
+.ctaFlex {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+  align-items: center;
+  font-size: 1.4em;
+  max-width: 575px;
+}
+
+.ctaButton2 {
+  border-radius: 999;
+  padding: 10px 20px 10px 20px;
+  border: solid 2px black;
+  color: black;
+  font-size: 1.4em;
+  font-weight: 800;
+
 }
 
 .upcycledFlexDiv {

@@ -107,7 +107,7 @@ export default function Home() {
     <div className={styles.upcycledFlexDiv}>
       <h2>MADE WITH RECYCLED MATERIAL RIGHT IN THE U.S.</h2>
       <p>All clothing is made from thrifted materials, cut and upcycled into new pieces. <b>Every scrap is used—nothing goes to waste.</b></p>
-      <a href="/shop/clothing" className={styles.ctaButton}>SHOP CLOTHING</a>
+      <a href="/shop/clothing" className={styles.ctaButton1}>SHOP CLOTHING</a>
     </div>
     
   </div>
@@ -152,9 +152,53 @@ export default function Home() {
   </svg>
 </div>
 
-<section>
-
+<section className={styles.ctaSection}>
+    <div className={styles.ctaFlex}>
+      <h2>WANT TO AVOID FAST FASHION?
+      </h2>
+      <a href="/shop/clothing" className={styles.ctaButton2}>SEE ALL</a>
+    </div>
 </section>
+
+<div className={styles.waveDividerYellow}>
+  <svg viewBox="0 0 120 6" preserveAspectRatio="none">
+    <path d="M0 3 
+             Q2 1 4 4 
+             T8 3 
+             T12 3 
+             T16 3 
+             T20 3 
+             T24 3 
+             T28 3 
+             T32 3 
+             T36 3 
+             T40 3 
+             T44 3 
+             T48 3 
+             T52 3 
+             T56 3 
+             T60 3 
+             T64 3 
+             T68 3 
+             T72 3 
+             T76 3 
+             T80 3 
+             T84 3 
+             T88 3 
+             T92 3 
+             T96 3 
+             T100 3 
+             T104 3 
+             T108 3 
+             T112 3 
+             T116 3 
+             T120 3 
+             T124 3
+             T128 3
+             T134 3
+             V6 H0 Z" />
+  </svg>
+</div>
 
     </div>
   );
