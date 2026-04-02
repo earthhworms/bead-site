@@ -107,7 +107,7 @@ export default function Home() {
     <div className={styles.upcycledFlexDiv}>
       <h2>MADE WITH RECYCLED MATERIAL RIGHT IN THE U.S.</h2>
       <p>All clothing is made from thrifted materials, cut and upcycled into new pieces. <b>Every scrap is used—nothing goes to waste.</b></p>
-      <a href="/shop/accessories" className={styles.ctaButton}>SHOP CLOTHING</a>
+      <a href="/shop/clothing" className={styles.ctaButton}>SHOP CLOTHING</a>
     </div>
     
   </div>
@@ -151,6 +151,10 @@ export default function Home() {
              V6 H0 Z" />
   </svg>
 </div>
+
+<section>
+
+</section>
 
     </div>
   );

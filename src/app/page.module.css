@@ -21,9 +21,9 @@
 }
 
 .landingButton {
-  background-color: var(--neon-purple);
+  background-color: var(--neon-pink);
   padding: 16px 32px;
-  color: var(--bg-primary);
+  color: white;
   font-weight: 800;
   border-radius: 32px;
   border: solid 2px black;
