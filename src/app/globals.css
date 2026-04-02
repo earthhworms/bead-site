@@ -46,6 +46,7 @@ h2 {
 
 p {
   font-family: var(--open-sans);
+  font-weight: 500;
 }
 
 * {

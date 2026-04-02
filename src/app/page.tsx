@@ -34,7 +34,7 @@ export default function Home() {
               BY A RAVER
             </h2>
 
-            <a className={styles.landingButton}>SHOP ITEMS</a>
+            <a href="/shop/accessories" className={styles.landingButton}>SHOP ITEMS</a>
           </div>
         </main>
 
@@ -53,7 +53,7 @@ export default function Home() {
 
       <section className={styles.bannerSection}>
         <h2 className={styles.banner}>
-          <i>UNIQUE RAVE GEAR MADE TO STAND OUT</i>
+          <i>SUSTAINABLE RAVE GEAR</i>
         </h2>
       </section>
 
@@ -61,6 +61,95 @@ export default function Home() {
         <h2 className={styles.recentsTitle}>RECENT PRODUCTS</h2>
         <RecentProducts />
       </section>
+
+    <div className={styles.waveDivider}>
+  <svg viewBox="0 0 120 6" preserveAspectRatio="none">
+    <path d="M0 3 
+             Q2 1 4 4 
+             T8 3 
+             T12 3 
+             T16 3 
+             T20 3 
+             T24 3 
+             T28 3 
+             T32 3 
+             T36 3 
+             T40 3 
+             T44 3 
+             T48 3 
+             T52 3 
+             T56 3 
+             T60 3 
+             T64 3 
+             T68 3 
+             T72 3 
+             T76 3 
+             T80 3 
+             T84 3 
+             T88 3 
+             T92 3 
+             T96 3 
+             T100 3 
+             T104 3 
+             T108 3 
+             T112 3 
+             T116 3 
+             T120 3 
+             T124 3
+             T128 3
+             T134 3
+             V6 H0 Z" />
+  </svg>
+</div>
+<section className={styles.upcycledSection}>
+  <div className={styles.upcycledFlex}>
+    <img className={styles.upcycledImg} src="/images/recycled-img.jpeg" alt="" />
+    <div>
+      <h2>MADE WITH RECYCLED MATERIAL RIGHT IN THE U.S.</h2>
+      <p>All the clothing is created from secondhand materials that are thrifted, cut, and upcycled into entirely new pieces. Some are transformed using the original garment itself, while others are reworked with added fabric and repurposed scraps. Nothing goes to waste. Every piece, every detail, every scrap is put to use.</p>
+    </div>
+  </div>
+</section>
+<div className={styles.waveDividerReversed}>
+  <svg viewBox="0 0 120 6" preserveAspectRatio="none">
+    <path d="M0 3 
+             Q2 1 4 4 
+             T8 3 
+             T12 3 
+             T16 3 
+             T20 3 
+             T24 3 
+             T28 3 
+             T32 3 
+             T36 3 
+             T40 3 
+             T44 3 
+             T48 3 
+             T52 3 
+             T56 3 
+             T60 3 
+             T64 3 
+             T68 3 
+             T72 3 
+             T76 3 
+             T80 3 
+             T84 3 
+             T88 3 
+             T92 3 
+             T96 3 
+             T100 3 
+             T104 3 
+             T108 3 
+             T112 3 
+             T116 3 
+             T120 3 
+             T124 3
+             T128 3
+             T134 3
+             V6 H0 Z" />
+  </svg>
+</div>
+
     </div>
   );
 }

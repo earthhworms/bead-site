@@ -16,26 +16,33 @@ export default async function ProductPage({
 
   return (
     <div className={styles.pageContainer}>
-        {product.images[0] && (
-        <img
-        className={styles.productImage}
-          src={product.images[0].url}
-          alt={product.images[0].altText || product.title}
-        />
-      )}
-      <h2>{product.title}</h2>
-      <div className={styles.productDetails}>
-        <p className={styles.price}>{product.price}</p>
-        <p className={styles.description}>{product.description}</p>
-        <ProductVariantSelector 
-            className={styles.variantSelector}
-            options={product.options}
-            variants={product.variants}
-        />
-        <div className={styles.paymentContainer}>
-            <p className={styles.securedPayment}>Secured Payment</p>
+        
+                {product.images[0] && (
+                    <img
+                    className={styles.productImage}
+                    src={product.images[0].url}
+                    alt={product.images[0].altText || product.title}
+                    />
+                )}
+                
+                <div className={styles.pageFlex}>
+
+                    <h2>{product.title}</h2>
+                    <div className={styles.productDetails}>
+                    <p className={styles.price}>{product.price}</p>
+                    <p className={styles.description}>{product.description}</p>
+                    <ProductVariantSelector 
+                    className={styles.variantSelector}
+                    options={product.options}
+                    variants={product.variants}
+                    />
+                    <div className={styles.paymentContainer}>
+                        <p className={styles.securedPayment}>Secured Payment</p>
+
+                </div>
+            </div>
+
         </div>
-      </div>
     </div>
   );
 }

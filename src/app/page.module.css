@@ -2,7 +2,6 @@
   font-size: 86px;
   line-height: 76px;
   margin: 0;
-
 }
 
 .title h2 {
@@ -30,7 +29,6 @@
   border: solid 2px black;
 }
 
-
 .page {
   overflow: hidden;
   position: relative;
@@ -39,31 +37,22 @@
   isolation: isolate;
 }
 
-
 .page::before {
   content: "";
   position: absolute;
   inset: 0;
-
-  background: url("/images/landing-image.png") left / cover no-repeat;
-
+  background: url("/images/back-image.jpeg") left / cover no-repeat;
   z-index: -2;
 }
-
 
 .page::after {
   content: "";
   position: absolute;
   inset: 0;
-
-  background: url("/images/landing-image.png") left / cover no-repeat;
-
+  background: url("/images/back-image.jpeg") left / cover no-repeat;
   filter: blur(2px);
-
-
   -webkit-mask-image: linear-gradient(to right, transparent 50%, black 100%);
   mask-image: linear-gradient(to right, transparent 50%, black 100%);
-
   z-index: -1;
 }
 
@@ -197,7 +186,21 @@
   border-radius: 12px;
   width: 90%;
   box-shadow: -5px -5px var(--neon-blue), -5px 5px var(--neon-green), 5px -5px var(--neon-pink), 5px 5px var(--neon-purple);
-  padding: 24px 0px 24px 0px;
+  padding: 24px 16px 24px 16px;
+  max-width: 330px;
+}
+
+.banner::before {
+  content: "";
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-image: url("/icons/recycle.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+  text-align: center !important;
 }
 
 
@@ -205,7 +208,6 @@
 .bannerSection {
   display: flex;
   padding-top: 32px;
-
   background-color: var(--bg-secondary);
   justify-content: center;
 }
@@ -216,8 +218,64 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  padding-bottom: 16px;
 }
 
 .recentsTitle {
   text-align: center
+}
+
+
+.waveDivider {
+  width: 100%;
+  line-height: 0;
+  background: var(--bg-secondary);
+}
+
+.waveDivider svg {
+  display: block;
+  width: 100%;
+height: 10px;
+  fill: var(--neon-pink);
+}
+
+.waveDividerReversed {
+  width: 100%;
+  line-height: 0;
+  background: var(--neon-pink);
+}
+
+.waveDividerReversed svg {
+  display: block;
+  width: 100%;
+  height: 10px;
+  fill: var(--bg-secondary);
+}
+
+.upcycledSection {
+  background-color: var(--neon-pink);
+  height: auto;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.upcycledSection h2 {
+  margin: 0;
+}
+
+.upcycledImg {
+  width: 100%;
+  max-width: 375px;
+  border: solid 2px black;
+  border-radius: 12px;
+  box-shadow: 0px 5px var(--neon-yellow);
+}
+
+.upcycledFlex {
+  display: flex;
+  gap: 32px;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
 }
