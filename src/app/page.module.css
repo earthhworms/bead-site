@@ -165,16 +165,6 @@
   fill: var(--bg-secondary);
 }
 
-@keyframes waveMove {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-
 
 .banner {
   display: flex;

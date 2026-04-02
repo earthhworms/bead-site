@@ -1,0 +1,145 @@
+
+
+.hero {
+  margin-top: 32px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 575px;
+}
+
+
+.rainbowText {
+    line-height: 1;
+    position: relative;
+    font-size: 3em;
+    margin-bottom: 0;
+    background: linear-gradient(
+        120deg,
+        var(--neon-blue) 0%,
+        var(--neon-pink) 22%,
+        var(--neon-yellow) 42%,
+        var(--neon-green) 68%,
+        var(--neon-purple) 100%
+    );
+
+    background-size: 250% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    animation: neonFlow 15s ease-in-out infinite alternate;
+}
+
+@keyframes neonFlow {
+    from {
+        background-position: 0% 0;
+    }
+    to {
+        background-position: 100% 0;
+    }
+}
+
+.wave {
+  width: 100%;
+  overflow: hidden;
+  background: transparent;
+  line-height: 0;
+  position: absolute;
+}
+
+.waveTrack {
+  display: flex;
+  width: 200%;
+  animation: waveMove 20s linear infinite;
+}
+
+.wave svg {
+  width: 50%;
+  height: 15px;
+  fill: var(--bg-secondary);
+  transform: rotate(180deg);
+}
+
+@keyframes waveMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.wave2 {
+  width: 100%;
+  overflow: hidden;
+  background: transparent;
+  line-height: 0;
+  position: absolute;
+}
+
+.waveTrack2 {
+  display: flex;
+  width: 200%;
+  animation: waveMove 20s linear infinite;
+}
+
+.wave2 svg {
+  width: 50%;
+  height: 15px;
+  fill: var(--bg-primary);
+  transform: rotate(180deg);
+}
+
+
+
+
+.section1 {
+  background-color: var(--neon-purple);
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.sectionContainer {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.section1 h2 {
+  margin-bottom: 12px;
+  font-size: 1.8rem;
+}
+
+.section1 p {
+  line-height: 1.7;
+  max-width: 700px;
+}
+
+.section2 {
+  background-color: var(--neon-pink);
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.section2 h2 {
+  margin-bottom: 12px;
+  font-size: 1.8rem;
+}
+
+.section2 p {
+  line-height: 1.7;
+  max-width: 700px;
+}
+
+.imgGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    max-width: 575px;
+}
+
+.imgGrid img {
+    width: 100%;
+    border: solid 2px white;
+    border-radius: 16px;
+}
