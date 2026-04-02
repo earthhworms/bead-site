@@ -268,7 +268,7 @@ height: 10px;
   max-width: 375px;
   border: solid 2px black;
   border-radius: 12px;
-  box-shadow: 0px 5px var(--neon-yellow);
+  box-shadow: -10px 10px var(--neon-blue);
 }
 
 .upcycledFlex {
@@ -278,4 +278,29 @@ height: 10px;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  max-width: 565px;
+}
+
+@media (max-width:500px) {
+  .upcycledFlex {
+    flex-direction: column;
+  }
+}
+
+.ctaButton {
+  border-radius: 999;
+  padding: 10px 20px 10px 20px;
+  color: var(--neon-pink);
+  font-weight: 800;
+  background-color: white;
+}
+
+.upcycledFlexDiv {
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.upcycledFlexDiv a {
+  width: fit-content;
 }

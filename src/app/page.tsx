@@ -103,11 +103,13 @@ export default function Home() {
 </div>
 <section className={styles.upcycledSection}>
   <div className={styles.upcycledFlex}>
-    <img className={styles.upcycledImg} src="/images/recycled-img.jpeg" alt="" />
-    <div>
+    <img className={styles.upcycledImg} src="/images/upcycled-skirt.jpg" alt="" />
+    <div className={styles.upcycledFlexDiv}>
       <h2>MADE WITH RECYCLED MATERIAL RIGHT IN THE U.S.</h2>
-      <p>All the clothing is created from secondhand materials that are thrifted, cut, and upcycled into entirely new pieces. Some are transformed using the original garment itself, while others are reworked with added fabric and repurposed scraps. Nothing goes to waste. Every piece, every detail, every scrap is put to use.</p>
+      <p>All clothing is made from thrifted materials, cut and upcycled into new pieces. <b>Every scrap is used—nothing goes to waste.</b></p>
+      <a href="/shop/accessories" className={styles.ctaButton}>SHOP CLOTHING</a>
     </div>
+    
   </div>
 </section>
 <div className={styles.waveDividerReversed}>
