@@ -95,7 +95,7 @@
 
 
 .section1 {
-  background-color: var(--neon-purple);
+  background-color: var(--bg-secondary);
   padding-top: 32px;
   padding-bottom: 32px;
 }
@@ -116,7 +116,7 @@
 }
 
 .section2 {
-  background-color: var(--neon-pink);
+  background-color: var(--neon-purple);
   padding-top: 32px;
   padding-bottom: 32px;
 }
