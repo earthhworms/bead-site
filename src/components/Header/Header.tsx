@@ -57,7 +57,7 @@ export default function Header() {
               <a href="/about">About</a>
             </li>
             <li className={styles.navItem}>
-              <a href="/contact">Contact</a>
+              <a href="/construction">Contact</a>
             </li>
           </ul>
         </nav>

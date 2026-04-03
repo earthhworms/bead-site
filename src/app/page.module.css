@@ -302,7 +302,6 @@ height: 10px;
 
 .upcycledImg {
   width: 100%;
-  max-width: 375px;
   border: solid 2px black;
   border-radius: 12px;
   box-shadow: -10px 10px var(--neon-blue);
@@ -315,7 +314,7 @@ height: 10px;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  max-width: 565px;
+  max-width: 1024px;
 }
 
 @media (max-width:500px) {
@@ -368,4 +367,40 @@ height: 10px;
 
 .upcycledFlexDiv a {
   width: fit-content;
+}
+
+
+.accordionSection {
+  background-color: var(--bg-secondary);
+  padding-top: 32px;
+  padding-bottom: 24px;
+}
+
+.productImage {
+  border: solid 2px white;
+  box-shadow: 5px -5px var(--neon-pink);
+  border-radius: 16px;
+  width: 100%;
+}
+
+.accordionSection h2 {
+  font-size: 2em;
+  margin: 0;
+}
+
+.accordionSectionContainer {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+@media (min-width:750px) {
+  .accordionSectionContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+  }
 }

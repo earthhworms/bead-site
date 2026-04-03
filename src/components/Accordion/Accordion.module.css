@@ -1,0 +1,48 @@
+.accordion {
+  width: 100%;
+}
+
+.item {
+  border-top: 1px solid var(--neon-purple);
+  padding: 24px 0;
+}
+
+.item:first-child {
+  border-top: none
+}
+
+.header {
+  width: 100%;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2em;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  line-height: 1;
+  font-weight: 300;
+}
+
+.iconOpen {
+  transform: rotate(180deg);
+}
+
+.content {
+  margin-top: 24px;
+  max-width: 900px;
+}
+
+.content p {
+  margin: 0;
+}

@@ -1,7 +1,16 @@
 import styles from "./page.module.css";
 import RecentProducts from "@/components/RecentProducts/RecentProducts";
+import Accordion from "@/components/Accordion/Accordion";
+import ProductVariantSelector from "@/components/ProductVariantSelector/ProductVariantSelector";
+import { getProduct } from "@/lib/shopify";
 
-export default function Home() {
+export default async function Home() {
+  const product = await getProduct("led-adult-pacifier");
+
+  if (!product) {
+    return <div>Product not found</div>;
+  }
+
   return (
     <div>
       <div className={styles.page}>
@@ -199,6 +208,27 @@ export default function Home() {
              V6 H0 Z" />
   </svg>
 </div>
+
+<section className={styles.accordionSection}>
+   <div className={styles.accordionSectionContainer}>
+    {product.images[0] && (
+        <img
+          className={styles.productImage}
+          src={product.images[0].url}
+          alt={product.images[0].altText || product.title}
+        />
+      )}
+      <div>
+        <h2>LED ADULT PACIFIERS</h2>
+        <Accordion />
+        <ProductVariantSelector 
+          className={styles.variantSelector}
+          options={product.options}
+          variants={product.variants}
+        />
+      </div>
+    </div>
+</section>
 
     </div>
   );
