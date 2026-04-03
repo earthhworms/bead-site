@@ -14,11 +14,37 @@ export default function AboutPage() {
             </svg>
           </div>
         </div>
-      <section className={styles.hero}>
-        <h1 className={styles.rainbowText}>About</h1>
-        <p className={styles.subtitle}>
-          Upcycled pieces made from thrifted materials and reworked by hand.
-        </p>
+      <section className={styles.heroSection}>
+        <div className={styles.hero}>
+          <h2>Welcome to</h2>
+          <h1 className={styles.rainbowText}>BUNNY ON A BENDER</h1>
+          <img className={styles.heroImg} src="/images/about-hero.jpg" alt="" />
+        </div>
+        
+      </section>
+
+      <section className={styles.heroIntro}>
+        <div className={styles.heroIntroContainer}>
+          <h2>Discovery, not conformism</h2>
+            <p>Most fashion isn’t made with individuality in mind. It’s made to be produced fast, pushed hard, and replaced even faster. Big retailers want you buying whatever everyone else is wearing, while the people making truly interesting, personal, and well-loved pieces get buried in the process.
+            <br />
+            <br />
+            I started Bunny on a Bender to do things differently.
+            <br />
+            <br />
+            This brand was made for people who want to discover their style instead of being told what it should look like. For people who want pieces with personality, not just whatever’s trending for the next two weeks. And for people who care where their clothes come from, how they’re made, and what they’re supporting when they buy them.
+            <br />
+            <br /> 
+            Through this shop, you’ll find one-of-a-kind ravewear, accessories, and upcycled pieces made to stand out, feel personal, and actually mean something. You’ll also avoid feeding the machine of throwaway fashion and questionable manufacturing while you’re at it.
+            <br />
+            <br />
+            We reject the idea that fashion has to be mass-produced to be worth wearing.
+            <br />
+            <br />
+            So… go find something weird, cute, and entirely you.</p>
+        </div>
+        
+        
       </section>
 
       <div className={styles.wave2}>

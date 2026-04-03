@@ -372,8 +372,8 @@ height: 10px;
 
 .accordionSection {
   background-color: var(--bg-secondary);
-  padding-top: 32px;
-  padding-bottom: 24px;
+  padding-top: 64px;
+  padding-bottom: 32px;
 }
 
 .productImage {

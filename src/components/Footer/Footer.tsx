@@ -31,6 +31,7 @@ export default function Footer() {
           </ul>
         </div>
 
+      </div>
         <div className={styles.socialMedia}>
           <a href="https://instagram.com/bunnyonabender">
             <img
@@ -40,9 +41,6 @@ export default function Footer() {
             />
           </a>
         </div>
-
-      </div>
-
       <div className={styles.footerBottom}>
         <p>© {new Date().getFullYear()} Bunny on a Bender. All rights reserved.</p>
       </div>
