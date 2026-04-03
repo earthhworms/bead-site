@@ -31,6 +31,12 @@ export default function Footer() {
               className={styles.socialIcon}
             />
           </a>
+          <a href="https://www.depop.com/bunnyonabender/">
+            <img 
+              src="/icons/depop.svg" 
+              alt="Depop logo"
+              className={styles.socialIcon}/>
+          </a>
         </div>
       <div className={styles.footerBottom}>
         <p>© {new Date().getFullYear()} Bunny on a Bender. All rights reserved.</p>
