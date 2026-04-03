@@ -9,7 +9,7 @@
   --neon-purple:#9a6bff;
 
   --text-primary: #f4f3ff;
-  --text-muted:  #b8b4d9;
+  --text-muted:  #F2F1F8;
   --border-subtle:#3a3160;
 }
 
@@ -24,7 +24,9 @@ li {
   font-size: .9em;
 }
 
-
+b {
+  color: var(--text-primary);
+}
 
 h1{
   font-family: var(--bungee);
@@ -47,6 +49,7 @@ h2 {
 p {
   font-family: var(--open-sans);
   font-weight: 500;
+  color: var(--text-muted);
 }
 
 * {

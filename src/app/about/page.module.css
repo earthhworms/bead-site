@@ -27,7 +27,7 @@
 .heroIntroContainer {
     padding-top: 16px;
     padding-bottom: 16px;
-    color: white;
+    color: var(--text-primary);
     width: 90%;
     margin: 0 auto;
 }
@@ -164,7 +164,7 @@
 
 .imgGrid img {
     width: 100%;
-    border: solid 2px white;
+    border: solid 2px var(--text-primary);
     border-radius: 16px;
     box-shadow: 5px -5px var(--neon-pink);
 }
