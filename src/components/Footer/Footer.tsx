@@ -4,31 +4,22 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>
-        
-        <div className={styles.footerSection}>
-          <img
+        <img
               src="/icons/logo.svg"
               alt="Bunny Logo"
               className={styles.logo}
             />
-          <p>Upcycled fashion made in the U.S.</p>
-        </div>
-
+        <h1 className={styles.footerGreeting}>THANKS FOR CHECKING US OUT</h1>
+        
         <div className={styles.footerSection}>
-          <h2>Shop</h2>
-          <ul>
-            <li><a href="/shop/accessories">Accessories</a></li>
-            <li><a href="/shop/clothing">Clothing</a></li>
-          </ul>
-        </div>
-
-        <div className={styles.footerSection}>
-          <h2>Info</h2>
-          <ul>
-            <li><a href="/about">About</a></li>
-            <li><a href="/shipping">Shipping</a></li>
-            <li><a href="/returns">Returns</a></li>
-          </ul>
+            <ul>
+              <li><a href="/shop/accessories">Accessories</a></li>
+              <li><a href="/shop/clothing">Clothing</a></li>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/shipping">Shipping Policy</a></li>
+              <li><a href="/returns">Return Policy</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
         </div>
 
       </div>

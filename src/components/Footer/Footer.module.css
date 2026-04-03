@@ -2,6 +2,15 @@
     background: var(--bg-secondary);
     color: white;
     padding: 48px 16px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.footerGreeting {
+    width: 100%;
+    font-size: 3em;
+    margin: 0;
 }
 
 .footerContainer {
@@ -17,10 +26,17 @@
     min-width: 150px;
 }
 
+.logo {
+width: 45px;
+}
+
 .footerSection ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .footerSection li {
@@ -30,7 +46,7 @@
 .footerSection a {
     color: white;
     text-decoration: none;
-    opacity: 0.8;
+    font-weight: 600;
 }
 
 .footerSection a:hover {
@@ -45,9 +61,7 @@
 }
 
 .socialMedia {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    margin: 0 auto;
 }
 
 .socialIcon {
