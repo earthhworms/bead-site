@@ -16,9 +16,10 @@ export default function LinksPage() {
         </p>
 
         <div className={styles.links}>
+        <a href="/" target="_blank" className={styles.linkButton}>Home page</a>
           <a href="https://www.depop.com/bunnyonabender/" target="_blank" className={styles.linkButton}>Depop</a>
-          <a href="https://www.depop.com/bunnyonabender/" target="_blank" className={styles.linkButton}>Insta Biz</a>
-          <a href="/about" className={styles.linkButton}>Insta Main ~</a>
+          <a href="https://www.instagram.com/bunnyonabender/" target="_blank" className={styles.linkButton}>Insta Biz</a>
+          <a href="https://www.instagram.com/bunnybxns/" className={styles.linkButton}>Insta Main ~</a>
         </div>
       </div>
     </main>

@@ -97,6 +97,7 @@ export default function Header() {
       </div>
 
       <CartDrawer />
+      
     </div>
   );
 }

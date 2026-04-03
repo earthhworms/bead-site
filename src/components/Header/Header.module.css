@@ -232,30 +232,3 @@
   z-index: 2;
 }
 
-.wave {
-  width: 100%;
-  overflow: hidden;
-  background: var(--bg-secondary);
-  line-height: 0;
-}
-
-.waveTrack {
-  display: flex;
-  width: 200%;
-  animation: waveMove 20s linear infinite;
-}
-
-.wave svg {
-  width: 50%;
-  height: 15px;
-  fill: var(--bg-primary);
-}
-
-@keyframes waveMove {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
