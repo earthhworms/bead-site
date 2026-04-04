@@ -16,9 +16,8 @@ export default function Footer() {
               <li><a href="/shop/accessories">Accessories</a></li>
               <li><a href="/shop/clothing">Clothing</a></li>
               <li><a href="/about">About Us</a></li>
-              <li><a href="/shipping">Shipping Policy</a></li>
-              <li><a href="/returns">Return Policy</a></li>
-              <li><a href="/contact">Contact</a></li>
+              <li><a href="/shipping-policy">Shipping Policy</a></li>
+              <li><a href="/refund-policy">Return Policy</a></li>
             </ul>
         </div>
 

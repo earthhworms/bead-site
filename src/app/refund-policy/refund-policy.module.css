@@ -1,0 +1,29 @@
+.page {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  background: var(--bg-primary);
+}
+
+.page a {
+    color: white;
+    font-weight: 600;
+    border-bottom: solid 1.5px white;
+}
+
+.container {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.title {
+  margin: 0 0 40px;
+  text-align: center;
+  font-weight: 900;
+  line-height: 0.95;
+  font-size: 2.5em;
+}
+
+.text {
+  margin: 0 auto;
+  max-width: 940px;
+}
